@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/router'
-import { Grid, Link } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import Typography from '@mui/material/Typography';
-//DECIDED NOT TO USE
 interface Props {
     id: number,
 }
@@ -24,19 +22,8 @@ export default function Graph({ }: Props) {
     return (
         <div style={classes.root} >
             <div>
-
-                <img
-                    src={id}
-                    alt="new"
-                    width={200}
-                    height={100}
-                    style={{ objectFit: 'cover' }}
-
-                />
-
+                <Typography>{id}</Typography>
             </div>
-
-
         </div>
     );
 }

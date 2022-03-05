@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Typography, AppBar, Box, Toolbar, Container, Button } from '@mui/material';
+import { Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../store/reducers/rootReducer';
 import { getNews } from '../../store/actions/newsActions';
@@ -7,10 +7,9 @@ import Graph from '../../components/Graph';
 
 
 
-const pages = ['Blog', 'Pricing', 'Docs'];
 
 const ResponsiveAppBar = () => {
-    const { data, loading, error } = useSelector((state: AppState) => state.news);
+    const { data } = useSelector((state: AppState) => state.news);
     const dispatch = useDispatch();
 
     React.useEffect(() => {

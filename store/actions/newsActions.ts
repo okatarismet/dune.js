@@ -1,5 +1,5 @@
-import { News, NewsDispatch } from "../../types/news";
-import { coincap, cryptopanic } from "../../lib/api";
+import { NewsDispatch } from "../../types/news";
+import { cryptopanic } from "../../lib/api";
 import config from '../../lib/config'
 
 export const getNews = () => async (dispatch: NewsDispatch) => {

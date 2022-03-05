@@ -18,6 +18,10 @@ interface PRICE_SUCCESS {
 interface PRICE_ERROR {
   type: "PRICE_ERROR";
 }
+interface PRICE_CATCH {
+  type: "PRICE_CATCH";
+  payload: Price[];
+}
 
 
 export interface Price {
@@ -39,5 +43,6 @@ export type PriceAction =
   | PRICE_START
   | PRICE_SUCCESS
   | PRICE_ERROR
+  | PRICE_CATCH
 
 export type PriceDispatch = ThunkDispatch<PriceState, void, PriceAction>;

@@ -2,23 +2,22 @@ import * as React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../store/reducers/rootReducer";
 import { theme } from '../../lib/theme'
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { getPrices } from '../../store/actions/priceActions'
-import { Typography } from '@mui/material';
 
 function stylePrice(x: string | number) {
+    if (typeof x === "number") {
+        x = x.toString();
+    }
     return parseFloat(x).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 function styleChange(x: string | number) {
+    if (typeof x === "number") {
+        x = x.toString();
+    }
     let change = parseFloat(x).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     let color = theme.palette.color.sucess;
-    if (change < 0) {
+    if (parseInt(change) < 0) {
         color = theme.palette.color.danger;
     }
     return <Typography color={color}>{"% " + change}</Typography>
@@ -26,7 +25,7 @@ function styleChange(x: string | number) {
 const classes = {
     tableNameRow: {
         display: "flex",
-        flexDirection: "row",
+        // flexDirection: "row",
         paddingLeft: '2em'
     },
     tableNameSymbol: {
@@ -36,7 +35,7 @@ const classes = {
 
 }
 const BasicTable = () => {
-    const { data, loading, error } = useSelector((state: AppState) => state.price);
+    const { data } = useSelector((state: AppState) => state.price);
     const dispatch = useDispatch();
 
     React.useEffect(() => {

@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { Grid, Link } from '@mui/material';
-
-import { Typography } from '@mui/material';
+import { Grid, Link, Typography } from '@mui/material';
 
 
 interface Props {
@@ -22,7 +20,7 @@ const classes = {
     }
 }
 
-export default function Graph({ title, source, url, published_at, image }: Props) {
+export default function Graph({ title, source, image }: Props) {
     return (
         <div style={classes.root} >
             <div>
