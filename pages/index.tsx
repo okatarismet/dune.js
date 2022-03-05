@@ -4,28 +4,27 @@ import { createStyles, makeStyles } from '@mui/styles';
 import Layout from '../components/Layout';
 
 
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/client';
 
 
-export type Image = { src: string; width: number; height: number };
-interface Props {
-    tools: { name: string; image?: Image }[];
-}
 
-export default function Home({ tools }: Props) {
+export default function Home({ }) {
 
     return (
         <>
             <Layout title="Dune.js">
-                <Grid container spacing={4} direction="column">
-                    <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                        <Grid container item alignContent="center" justifyContent="center">
-                            <Typography variant="h5" component="h2">
-                                Tools
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Grid>
+
             </Layout>
         </>
     );
+}
+export const getServerSideProps = async () => {
+
+    return {
+        redirect: {
+            permanent: false,
+            destination: '/dashboard'
+        }
+    }
 }
