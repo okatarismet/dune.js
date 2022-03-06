@@ -31,10 +31,10 @@ export default function Graph({ title, source, image }: Props) {
                     <Link href={"/cards/" + title}>
                         <img
                             src={image}
-                            alt="new"
-                            width={200}
-                            height={100}
-                            style={{ objectFit: 'cover' }}
+                            alt={source}
+                            width={250}
+                            height={120}
+                            style={{ objectFit: 'cover', borderRadius: '0.5em' }}
                         />
                     </Link>
                     <Typography color="text.secondary" gutterBottom>
