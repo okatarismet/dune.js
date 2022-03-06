@@ -7,8 +7,6 @@ All scripts can be run by prefixing with `npm run`, for example `npm run build`
 
 ### build
 
-Builds the production application in the .next folder.
-
 ```bash
 npm run build
 ```
@@ -26,8 +24,6 @@ npm run start
 ```
 
 ### test
-
-Runs Jest unit tests to validate changes between commits
 
 ```bash
 npm run test
